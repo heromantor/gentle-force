@@ -17,6 +17,8 @@ class CheckAndIncreaseCommand extends ScriptCommand
      */
     public function __construct($key, array $rateLimits, $microtime)
     {
+        $key = addslashes($key);
+
         $this->setArguments([$key, $this->formatRateLimits($rateLimits), $microtime]);
     }
 

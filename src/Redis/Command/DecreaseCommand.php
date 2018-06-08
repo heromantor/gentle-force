@@ -16,6 +16,8 @@ class DecreaseCommand extends ScriptCommand
      */
     public function __construct($key, array $rateLimits)
     {
+        $key = addslashes($key);
+
         $this->setArguments([$key, $this->formatRateLimits($rateLimits)]);
     }
 
